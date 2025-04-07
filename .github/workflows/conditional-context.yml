@@ -1,0 +1,15 @@
+name: Conditional Context
+
+on: [push, pull_request]
+
+jobs:
+    conditional-execution:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check if pull request from main
+              if: ${{ github.event_name == 'pull_request' && github.ref == 'main' }}
+              run: echo Detected a pull request from the main branch
+
+            - name: Running deployment
+              if: ${{ github.event_name == 'push' && github.ref == 'main' }}
+              run: echo Running deployment for the main branch
