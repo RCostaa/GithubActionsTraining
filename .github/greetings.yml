@@ -1,0 +1,12 @@
+on:
+  issues:
+    types: [opened]
+  pull_request:
+    types: [opened]
+
+jobs:
+  greetings:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greetings
+        run: echo "Greetings from GitHub Actions!"
