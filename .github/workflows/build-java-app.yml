@@ -9,6 +9,10 @@ jobs:
     permissions:
       packages: write
 
+    defaults:
+      run:
+        working-directory: java-app 
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
