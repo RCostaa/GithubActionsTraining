@@ -7,9 +7,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Check if pull request from main
-              if: ${{ github.event_name == 'pull_request' && github.ref == 'main' }}
+              if: ${{ github.event_name == 'pull_request' && github.ref == 'refs/heads/main' }}
               run: echo Detected a pull request from the main branch
 
             - name: Running deployment
-              if: ${{ github.event_name == 'push' && github.ref == 'main' }}
+              if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
               run: echo Running deployment for the main branch
